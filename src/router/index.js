@@ -2,7 +2,22 @@ import { createWebHistory, createRouter } from "vue-router";
 import ContactBook from "@/views/ContactBook.vue";
 const routes = [
   {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/Login.vue"),
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: () => import("@/views/Register.vue"),
+  },
+  {
     path: "/",
+    name: "home",
+    component: () => import("@/views/home.vue"),
+  },
+  {
+    path: "/contactbook",
     name: "contactbook",
     component: ContactBook,
   },
@@ -21,7 +36,6 @@ const routes = [
     path: "/contacts/add",
     name: "contact.add",
     component: () => import("@/views/ContactAdd.vue"),
-
   },
 ];
 const router = createRouter({
